@@ -1,0 +1,61 @@
+package data.models;
+
+import java.time.Year;
+
+public class Vehicle {
+    private String name;
+    private String model;
+    private Year year;
+    private String color;
+    private String phoneNumber;
+    private Owner owner;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public Year getYear() {
+        return year;
+    }
+
+    public void setYear(Year year) {
+        year = year;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+
+        this.owner = owner;
+    }
+}
