@@ -3,12 +3,26 @@ package data.models;
 import java.time.Year;
 
 public class Vehicle {
+    private int id;
     private String name;
     private String model;
     private Year year;
     private String color;
     private String phoneNumber;
     private Owner owner;
+
+    public Vehicle(int id, String name, String model) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
