@@ -16,14 +16,14 @@ class VehiclesTest {
         }
 
         @Test
-        void testSaveVehicleIncreasesCount() {
+        void testSaveVehicleIncreasesByOne() {
             Vehicle vehicle = new Vehicle(1, "Corolla", "Toyota");
             repository.save(vehicle);
             assertEquals(1, repository.count());
         }
 
         @Test
-        void testFindByIdReturnsCorrectVehicle() {
+        void testFindByIdReturnsTheRightVehicle() {
             Vehicle vehicle = new Vehicle(2, "Civic", "Honda");
             repository.save(vehicle);
             Vehicle found = repository.findById(2);
@@ -56,8 +56,8 @@ class VehiclesTest {
 
         @Test
         void testDeleteSpecificVehicleRemovesOnlyThatVehicle() {
-            Vehicle v1 = new Vehicle(1, "Mazda3", "Mazda");
-            Vehicle v2 = new Vehicle(2, "Focus", "Ford");
+            Vehicle v1 = new Vehicle(1, "Maruwa", "nissan");
+            Vehicle v2 = new Vehicle(2, "Tortise", "Tortise 1992");
             repository.save(v1);
             repository.save(v2);
             repository.delete(v1);
@@ -66,15 +66,15 @@ class VehiclesTest {
         }
 
         @Test
-        void testSavingExistingVehicleUpdatesIt() {
+        void testSavingExistingVehicleUpdatesTheCountForIt() {
             Vehicle v = new Vehicle(1, "Camry", "Toyota");
             repository.save(v);
 
-            Vehicle updated = new Vehicle(1, "Camry Hybrid", "Toyota");
+            Vehicle updated = new Vehicle(1, "Camry Spider", "Toyota");
             repository.save(updated);
 
             Vehicle found = repository.findById(1);
-            assertEquals("Camry Hybrid", found.getName());
+            assertEquals("Camry Spider", found.getName());
             assertEquals(1, repository.count());
         }
 
