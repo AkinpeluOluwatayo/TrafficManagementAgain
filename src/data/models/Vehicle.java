@@ -11,10 +11,7 @@ public class Vehicle {
     private String phoneNumber;
     private Owner owner;
 
-    public Vehicle(int id, String name, String model) {
-        this.id = id;
-        this.name = name;
-    }
+
 
     public int getId() {
         return id;

@@ -5,12 +5,16 @@ import java.time.LocalDateTime;
 public class Ticket {
     private int userId;
     private Vehicle vehicle;
-    private String offense;
+    private Offense offense;
     private boolean hasPaid;
     private Officer issuer;
     private LocalDateTime dateOfBooking =  LocalDateTime.now();
     private LocalDateTime dateOfPayment =  LocalDateTime.now();
 
+    public Ticket(int userId, Offense offense) {
+        this.userId = userId;
+        this.offense = offense;
+    }
 
     public int getUserId() {
         return userId;
@@ -28,11 +32,11 @@ public class Ticket {
         this.vehicle = vehicle;
     }
 
-    public String getOffense() {
+    public Offense getOffense() {
         return offense;
     }
 
-    public void setOffense(String offense) {
+    public void setOffense(Offense offense) {
         this.offense = offense;
     }
 

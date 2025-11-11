@@ -1,10 +1,11 @@
-package data.models;
+package dtos.requests;
 
-public class Officer {
+import data.models.Rank;
+
+public class OfficerRequest {
     private int userId;
     private String name;
     private Rank rank;
-
 
     public int getUserId() {
         return userId;

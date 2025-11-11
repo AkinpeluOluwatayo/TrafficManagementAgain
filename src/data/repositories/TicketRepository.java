@@ -1,21 +1,21 @@
 package data.repositories;
 
-import data.models.Vehicle;
+import data.models.Ticket;
 
 import java.util.ArrayList;
 
 public interface TicketRepository {
-    Vehicle save(Vehicle vehicle);
+    Ticket save(Ticket ticket);
 
-    Vehicle findById(int id);
+    Ticket findById(int id);
 
-    ArrayList<Vehicle> findAll();
+    ArrayList<Ticket> findAll();
 
     void deleteById(int id);
 
     void deleteAll();
 
-    void delete(Vehicle vehicle);
+    void delete(Ticket ticket);
 
     long count();
 }

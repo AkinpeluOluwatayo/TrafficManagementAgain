@@ -1,42 +1,53 @@
 package data.repositories;
 
-import data.models.Vehicle;
-
+import data.models.Ticket;
 import java.util.ArrayList;
 
 public class TicketRepositoryClass implements TicketRepository {
+    private final ArrayList<Ticket> tickets = new ArrayList<>();
+
     @Override
-    public Vehicle save(Vehicle vehicle) {
+    public Ticket save(Ticket ticket) {
+        Ticket existing = findById(ticket.getUserId());
+        if (existing != null) {
+            tickets.remove(existing);
+        }
+        tickets.add(ticket);
+        return ticket;
+    }
+
+    @Override
+    public Ticket findById(int id) {
+        for (Ticket t : tickets) {
+            if (t.getUserId() == id) {
+                return t;
+            }
+        }
         return null;
     }
 
     @Override
-    public Vehicle findById(int id) {
-        return null;
-    }
-
-    @Override
-    public ArrayList<Vehicle> findAll() {
-        return null;
+    public ArrayList<Ticket> findAll() {
+        return new ArrayList<>(tickets);
     }
 
     @Override
     public void deleteById(int id) {
-
+        tickets.removeIf(t -> t.getUserId() == id);
     }
 
     @Override
     public void deleteAll() {
-
+        tickets.clear();
     }
 
     @Override
-    public void delete(Vehicle vehicle) {
-
+    public void delete(Ticket ticket) {
+        tickets.remove(ticket);
     }
 
     @Override
     public long count() {
-        return 0;
+        return tickets.size();
     }
 }

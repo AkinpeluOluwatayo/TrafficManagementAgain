@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class VehiclesTest {
+class VehiclesRepositoryTest {
         private VehicleRepositoryClass repository;
 
         @BeforeEach
@@ -17,14 +17,14 @@ class VehiclesTest {
 
         @Test
         void testSaveVehicleIncreasesByOne() {
-            Vehicle vehicle = new Vehicle(1, "Corolla", "Toyota");
+            Vehicle vehicle = new Vehicle();
             repository.save(vehicle);
             assertEquals(1, repository.count());
         }
 
         @Test
         void testFindByIdReturnsTheRightVehicle() {
-            Vehicle vehicle = new Vehicle(2, "Civic", "Honda");
+            Vehicle vehicle = new Vehicle();
             repository.save(vehicle);
             Vehicle found = repository.findById(2);
             assertNotNull(found);
@@ -33,31 +33,31 @@ class VehiclesTest {
 
         @Test
         void testFindAllReturnsAllVehicles() {
-            repository.save(new Vehicle(1, "Camry", "Toyota"));
-            repository.save(new Vehicle(2, "Accord", "Honda"));
+            repository.save(new Vehicle());
+            repository.save(new Vehicle());
             ArrayList<Vehicle> all = repository.findAll();
             assertEquals(2, all.size());
         }
 
         @Test
         void testDeleteByIdRemovesVehicle() {
-            repository.save(new Vehicle(1, "Rav4", "Toyota"));
+            repository.save(new Vehicle());
             repository.deleteById(1);
             assertEquals(0, repository.count());
         }
 
         @Test
         void testDeleteAllClearsRepository() {
-            repository.save(new Vehicle(1, "BMW", "X3"));
-            repository.save(new Vehicle(2, "Audi", "Q5"));
+            repository.save(new Vehicle());
+            repository.save(new Vehicle());
             repository.deleteAll();
             assertEquals(0, repository.count());
         }
 
         @Test
         void testDeleteSpecificVehicleRemovesOnlyThatVehicle() {
-            Vehicle v1 = new Vehicle(1, "Maruwa", "nissan");
-            Vehicle v2 = new Vehicle(2, "Tortise", "Tortise 1992");
+            Vehicle v1 = new Vehicle();
+            Vehicle v2 = new Vehicle();
             repository.save(v1);
             repository.save(v2);
             repository.delete(v1);
@@ -67,10 +67,10 @@ class VehiclesTest {
 
         @Test
         void testSavingExistingVehicleUpdatesTheCountForIt() {
-            Vehicle v = new Vehicle(1, "Camry", "Toyota");
+            Vehicle v = new Vehicle();
             repository.save(v);
 
-            Vehicle updated = new Vehicle(1, "Camry Spider", "Toyota");
+            Vehicle updated = new Vehicle();
             repository.save(updated);
 
             Vehicle found = repository.findById(1);
