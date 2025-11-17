@@ -1,8 +1,5 @@
 package dtos.requests;
 
-import data.models.Gender;
-import data.models.Owner;
-
 import java.time.Year;
 
 public class VehicleRequest {

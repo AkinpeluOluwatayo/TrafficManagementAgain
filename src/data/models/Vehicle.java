@@ -37,12 +37,13 @@ public class Vehicle {
         this.model = model;
     }
 
+
     public Year getYear() {
         return year;
     }
 
     public void setYear(Year year) {
-        year = year;
+        this.year = year;
     }
 
     public String getColor() {

@@ -1,24 +1,19 @@
-package data.models;
+package dtos.responses;
+
+import data.models.Offense;
+import data.models.Officer;
+import data.models.Vehicle;
 
 import java.time.LocalDateTime;
 
-public class Ticket {
-    private int userId;
+public class TicketResponse {
     private Vehicle vehicle;
     private Offense offense;
     private boolean hasPaid;
     private Officer issuer;
     private LocalDateTime dateOfBooking =  LocalDateTime.now();
     private LocalDateTime dateOfPayment =  LocalDateTime.now();
-
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+    private String message;
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -66,5 +61,13 @@ public class Ticket {
 
     public void setDateOfPayment(LocalDateTime dateOfPayment) {
         this.dateOfPayment = dateOfPayment;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

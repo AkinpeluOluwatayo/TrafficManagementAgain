@@ -3,6 +3,7 @@ package utils;
 import data.models.Owner;
 import data.models.Vehicle;
 import dtos.requests.VehicleRequest;
+import dtos.responses.VehicleResponse;
 
 public class VehicleServiceMapper {
     public static Vehicle map(VehicleRequest vehicleRequest) {
@@ -21,4 +22,14 @@ public class VehicleServiceMapper {
         vehicle.setOwner(owner);
         return vehicle;
     }
+
+    public static VehicleResponse mapAllVehicle(Vehicle vehicle) {
+        VehicleResponse response = new VehicleResponse();
+        response.setId(vehicle.getId());
+        response.setName(vehicle.getName());
+        response.setModel(vehicle.getModel());
+        response.setYear(vehicle.getYear());
+        return response;
+    }
+
 }

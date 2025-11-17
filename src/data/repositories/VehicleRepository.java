@@ -3,7 +3,7 @@ package data.repositories;
 import data.models.Vehicle;
 import java.util.ArrayList;
 
-public class VehicleRepositoryClass implements VehiclesRepository {
+public class VehicleRepository implements VehiclesRepository {
     private final ArrayList<Vehicle> vehicles = new ArrayList<>();
 
     @Override

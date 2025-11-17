@@ -29,4 +29,6 @@ public class Officer {
     public void setRank(Rank rank) {
         this.rank = rank;
     }
+
+
 }

@@ -15,9 +15,12 @@ public class OfficerServicesClass implements OfficerServices {
 
         @Override
         public OfficerResponse registerOfficer (OfficerRequest officerRequest) {
+            OfficerResponse officerResponse = new OfficerResponse();
            Officer officer = map (officerRequest);
             officerRepository.save(officer);
-            return new OfficerResponse();
+            officerResponse.setMessage("Successfully Registered");
+            return officerResponse;
         }
+
 
 }
