@@ -1,8 +1,6 @@
 package services;
 
-import data.models.Offense;
 import data.models.Rank;
-import data.repositories.OfficerRepositoryClass;
 import dtos.requests.OfficerRequest;
 import dtos.responses.OfficerResponse;
 import org.junit.jupiter.api.BeforeEach;

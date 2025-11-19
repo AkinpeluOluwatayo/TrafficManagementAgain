@@ -1,8 +1,5 @@
 package services;
 
-import data.models.Owner;
-import data.models.Vehicle;
-import data.repositories.VehicleRepository;
 import data.repositories.VehiclesRepository;
 import dtos.requests.VehicleRequest;
 import dtos.responses.VehicleResponse;

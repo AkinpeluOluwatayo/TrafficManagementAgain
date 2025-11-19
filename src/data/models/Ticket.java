@@ -1,70 +1,32 @@
 package data.models;
 
+import lombok.Data;
+import data.models.Vehicle;
+import data.models.Offense;
+
+
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 
+@Document
+@Data
 public class Ticket {
-    private int userId;
+    @Id
+    private String userId;
+
+    @DBRef
     private Vehicle vehicle;
     private Offense offense;
     private boolean hasPaid;
+
+    @DBRef
     private Officer issuer;
     private LocalDateTime dateOfBooking =  LocalDateTime.now();
     private LocalDateTime dateOfPayment =  LocalDateTime.now();
 
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
-
-    public Offense getOffense() {
-        return offense;
-    }
-
-    public void setOffense(Offense offense) {
-        this.offense = offense;
-    }
-
-    public boolean isHasPaid() {
-        return hasPaid;
-    }
-
-    public void setHasPaid(boolean hasPaid) {
-        this.hasPaid = hasPaid;
-    }
-
-    public Officer getIssuer() {
-        return issuer;
-    }
-
-    public void setIssuer(Officer issuer) {
-        this.issuer = issuer;
-    }
-
-    public LocalDateTime getDateOfBooking() {
-        return dateOfBooking;
-    }
-
-    public void setDateOfBooking(LocalDateTime dateOfBooking) {
-        this.dateOfBooking = dateOfBooking;
-    }
-
-    public LocalDateTime getDateOfPayment() {
-        return dateOfPayment;
-    }
-
-    public void setDateOfPayment(LocalDateTime dateOfPayment) {
-        this.dateOfPayment = dateOfPayment;
-    }
 }

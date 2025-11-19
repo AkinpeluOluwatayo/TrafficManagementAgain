@@ -1,10 +1,12 @@
 package data.repositories;
 
 import data.models.Officer;
+import data.models.Owner;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.ArrayList;
 
-public interface OwnerRepository {
+public interface OwnerRepository extends MongoRepository<Owner,String> {
 
     Officer save(Officer officer);
 

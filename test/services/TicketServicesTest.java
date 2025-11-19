@@ -1,7 +1,6 @@
 package services;
 
 import data.models.*;
-import data.repositories.TicketRepositoryClass;
 import dtos.requests.TicketRequest;
 import dtos.responses.TicketResponse;
 import org.junit.jupiter.api.BeforeEach;

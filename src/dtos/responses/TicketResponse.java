@@ -2,6 +2,7 @@ package dtos.responses;
 
 import data.models.Offense;
 import data.models.Officer;
+import data.models.Ticket;
 import data.models.Vehicle;
 
 import java.time.LocalDateTime;
@@ -14,6 +15,7 @@ public class TicketResponse {
     private LocalDateTime dateOfBooking =  LocalDateTime.now();
     private LocalDateTime dateOfPayment =  LocalDateTime.now();
     private String message;
+    private Ticket ticket;
 
     public Vehicle getVehicle() {
         return vehicle;
@@ -69,5 +71,10 @@ public class TicketResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
     }
 }
