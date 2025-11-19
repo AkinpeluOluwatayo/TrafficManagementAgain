@@ -1,7 +1,9 @@
 package dtos.requests;
 
-import java.time.Year;
+import lombok.Data;
 
+import java.time.Year;
+@Data
 public class VehicleRequest {
     private String vehicleName;
     private String vehicleModel;
@@ -12,67 +14,4 @@ public class VehicleRequest {
     private String ownerAddress;
     private String ownerPhoneNumber;
 
-    public String getVehicleName() {
-        return vehicleName;
-    }
-
-    public void setVehicleName(String vehicleName) {
-        this.vehicleName = vehicleName;
-    }
-
-    public String getVehicleModel() {
-        return vehicleModel;
-    }
-
-    public void setVehicleModel(String vehicleModel) {
-        this.vehicleModel = vehicleModel;
-    }
-
-    public Year getProductionYear() {
-        return productionYear;
-    }
-
-    public void setProductionYear(Year productionYear) {
-        this.productionYear = productionYear;
-    }
-
-    public String getVehicleColor() {
-        return VehicleColor;
-    }
-
-    public void setVehicleColor(String vehicleColor) {
-        VehicleColor = vehicleColor;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public String getOwnerEmail() {
-        return ownerEmail;
-    }
-
-    public void setOwnerEmail(String ownerEmail) {
-        this.ownerEmail = ownerEmail;
-    }
-
-    public String getOwnerAddress() {
-        return ownerAddress;
-    }
-
-    public void setOwnerAddress(String ownerAddress) {
-        this.ownerAddress = ownerAddress;
-    }
-
-    public String getOwnerPhoneNumber() {
-        return ownerPhoneNumber;
-    }
-
-    public void setOwnerPhoneNumber(String ownerPhoneNumber) {
-        this.ownerPhoneNumber = ownerPhoneNumber;
-    }
 }

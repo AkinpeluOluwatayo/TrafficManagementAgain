@@ -2,8 +2,10 @@ package controllers;
 
 import dtos.requests.TicketRequest;
 import dtos.responses.TicketResponse;
+import org.springframework.web.bind.annotation.RestController;
 import services.TicketServicesInterface;
 
+@RestController
 public class TicketController {
 
     private TicketServicesInterface ticketServices;

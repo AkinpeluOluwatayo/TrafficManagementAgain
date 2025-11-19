@@ -2,8 +2,10 @@ package controller;
 
 import dtos.requests.OfficerRequest;
 import dtos.responses.OfficerResponse;
+import org.springframework.web.bind.annotation.RestController;
 import services.OfficerServices;
 
+@RestController
 public class OfficerController {
 
     private OfficerServices officerServices;
